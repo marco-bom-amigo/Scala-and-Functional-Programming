@@ -24,11 +24,16 @@ object Functions extends App {
     aSmallerFunction(n, n - 1)
   }
   /*
-  * 1. String whatever
+  * 1. Greeting
   * 2. Factorial
   * 3. Fibonacci
   * 4. A number is prime
   * */
+
+  def greetingForKids(name: String, age: Int): String =
+    "Hi, my name is " + name + " and I am " + age + " years old."
+  println(greetingForKids(name = "Marco", age =  28))
+
 
 
 }
