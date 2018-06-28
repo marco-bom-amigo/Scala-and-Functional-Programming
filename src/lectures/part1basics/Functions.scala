@@ -2,10 +2,10 @@ package lectures.part1basics
 
 object Functions extends App {
 
-  def aFuntion(a: String, b: Int): String = {
+  def aFunction(a: String, b: Int): String = {
     a + " " + b
   }
-  println(aFuntion("Hello", 3))
+  println(aFunction("Hello", 3))
 
   def aParameterlessFunction () :Int = 42
   println(aParameterlessFunction())
@@ -23,6 +23,7 @@ object Functions extends App {
     def aSmallerFunction(a: Int, b: Int): Int = a + b
     aSmallerFunction(n, n - 1)
   }
+
   /*
   * 1. Greeting
   * 2. Factorial
