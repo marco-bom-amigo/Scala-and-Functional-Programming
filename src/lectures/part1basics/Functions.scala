@@ -45,5 +45,17 @@ object Functions extends App {
   def fibonacci(n: Int): Int =
     if (n <= 2) 1
     else fibonacci(n - 1) + fibonacci(n - 2)
-  print(fibonacci(8))
+  println(fibonacci(8))
+
+  // 4. Is prime
+  def isPrime(n: Int): Boolean = {
+    def isPrimeUntil(t: Int): Boolean =
+      if (t <= 1) true
+      else n % t != 0 && isPrimeUntil(t - 1)
+    isPrimeUntil(n / 2)
+  }
+  println(isPrime(37))
+  println(isPrime(2003))
+  println(isPrime(37 * 17))
+
 }
