@@ -27,6 +27,7 @@ object Functions extends App {
   * 1. String whatever
   * 2. Factorial
   * 3. Fibonacci
+  * 4. A number is prime
   * */
 
 
