@@ -54,6 +54,15 @@ object Recursion extends App {
   println(isPrime(629))
 
   // 3. Fibonacci function tail recursive
+  def fibonacci(n: Int): Int = {
+    @tailrec
+    def fiboTailRec(i: Int, last: Int = 1, nextToLast: Int = 1): Int =
+      if (i >= n) last
+      else fiboTailRec(i + 1, last + nextToLast, last)
 
+    if (n <= 2) 1
+    else fiboTailRec(2)
+  }
+  println(fibonacci(8))
 
 }
