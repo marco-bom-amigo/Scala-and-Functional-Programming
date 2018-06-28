@@ -30,16 +30,20 @@ object Functions extends App {
   * 4. A number is prime
   * */
 
+  // 1. Greeting
   def greetingForKids(name: String, age: Int): String =
     "Hi, my name is " + name + " and I am " + age + " years old."
   println(greetingForKids(name = "Marco", age =  28))
 
+  // 2. Factorial
   def factorial(n: Int): Int =
     if (n <= 0) 1
     else n * factorial(n - 1)
-
   println(factorial(5))
 
-
-
+  // 3. Fibonacci
+  def fibonacci(n: Int): Int =
+    if (n <= 2) 1
+    else fibonacci(n - 1) + fibonacci(n - 2)
+  print(fibonacci(8))
 }
