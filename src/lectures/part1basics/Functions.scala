@@ -9,7 +9,7 @@ object Functions extends App {
 
   def aParameterlessFunction () :Int = 42
   println(aParameterlessFunction())
-  println(aParameterlessFunction)
+  // println(aParameterlessFunction)
 
   def aRepeatedFunciotn(aString: String, n: Int): String = {
     if (n == 1) aString
@@ -33,6 +33,12 @@ object Functions extends App {
   def greetingForKids(name: String, age: Int): String =
     "Hi, my name is " + name + " and I am " + age + " years old."
   println(greetingForKids(name = "Marco", age =  28))
+
+  def factorial(n: Int): Int =
+    if (n <= 0) 1
+    else n * factorial(n - 1)
+
+  println(factorial(5))
 
 
 
