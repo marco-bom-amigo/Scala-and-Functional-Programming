@@ -1,7 +1,5 @@
 package lectures.part2oop
 
-import scala.annotation.tailrec
-
 object OOBasics extends App {
 
   val bona = new Person(name = "Bona",age = 28)
