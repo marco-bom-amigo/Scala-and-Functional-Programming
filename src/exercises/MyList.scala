@@ -22,7 +22,7 @@ abstract class MyList[+A] {
   def ++[B >: A](list: MyList[B]): MyList[B]
 }
 
-object Empty extends MyList[Nothing] {
+case object Empty extends MyList[Nothing] {
   def head: Nothing = throw new NoSuchElementException
   def tail: MyList[Nothing] = throw new NoSuchElementException
   def isEmpty: Boolean = true
@@ -36,7 +36,7 @@ object Empty extends MyList[Nothing] {
   def ++[B >: Nothing](list: MyList[B]): MyList[B] = list
 }
 
-class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
+case class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
   def head: A = h
   def tail: MyList[A] = t
   def isEmpty: Boolean = false
@@ -77,6 +77,7 @@ object ListTest extends App {
   println(list.toString)
 
   val listOfIntegers = new Cons(7, new Cons(8, new Cons(9, Empty)))
+  val cloneListOfIntegers = new Cons(7, new Cons(8, new Cons(9, Empty)))
   val anotherListOfIntegers = new Cons(10, new Cons(11, new Cons(12, Empty)))
   val listOfStrings  = new Cons("Hello", new Cons("Scala", Empty))
   println(listOfIntegers.toString)
@@ -94,5 +95,7 @@ object ListTest extends App {
   println(listOfIntegers.flatMap(new MyTransformer[Int, MyList[Int]] {
     override def transform(elem: Int): MyList[Int] = new Cons(elem, new Cons(elem + 1, Empty))
   }).toString)
+
+  println(cloneListOfIntegers == listOfIntegers)
 
 }
