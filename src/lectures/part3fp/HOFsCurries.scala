@@ -1,9 +1,12 @@
 package lectures.part3fp
 
+import scala.annotation.tailrec
+
 object HOFsCurries extends App {
 
   val superFunction: (Int, (String, (Int => Boolean)) => Int) => (Int => Int) = null
 
+  @tailrec
   def nTimes(f: Int => Int, n: Int, x: Int): Int =
     if (n <= 0) x
     else nTimes(f, n - 1, f(x))
