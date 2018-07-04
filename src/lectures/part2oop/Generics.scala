@@ -35,6 +35,4 @@ object Generics extends App {
   class Cage[A <: Animal](animal: A)
   val cage = new Cage(new Dog)
 
-
-
 }

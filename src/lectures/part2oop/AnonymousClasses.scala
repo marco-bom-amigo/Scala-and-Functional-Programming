@@ -6,13 +6,6 @@ object AnonymousClasses extends App {
     def eat: Unit
   }
 
-  /*
-   *  class AnonymousClasses$$anon$1 extends Animal {
-   *    override def eat: Unit = println("Hahahahaha...!")
-   *  }
-   *  val funnyAnimal: new AnonymousClasses$$anon$1
-   * */
-
   val funnyAnimal: Animal = new Animal {
     override def eat: Unit = println("Hahahahaha...!")
   }
