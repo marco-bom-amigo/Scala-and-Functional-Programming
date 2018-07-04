@@ -23,7 +23,15 @@ object WhatsAFunction extends App {
   }
   println(concatenator("Hello", " Scala"))
 
-  //val specialFunction
+  val superAdder: Function1[Int, Function1[Int, Int]] = new Function1[Int, Function1[Int, Int]] {
+    override def apply(x: Int): Function1[Int, Int] = new Function1[Int, Int] {
+      override def apply(y: Int): Int = x + y
+    }
+  }
+
+  val adder3 = superAdder(3)
+  println(adder3(4))
+  println(superAdder(3)(4))
 
 }
 
