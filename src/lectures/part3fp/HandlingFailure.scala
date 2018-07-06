@@ -27,5 +27,5 @@ object HandlingFailure extends App {
   println(aSuccess.map(_ * 2))
   println(aSuccess.flatMap(x => Success(x * 10)))
   println(aSuccess.filter(_ > 10))
-  println()
+
 }
