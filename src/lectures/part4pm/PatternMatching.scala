@@ -12,7 +12,7 @@ object PatternMatching extends App {
   }
   case class Person(name: String, age: Int)
   val bob = Person("Bob", 20)
-  val greeting = match bob {
+  val greeting = bob match {
     case Person(a, b) => s"Hi, my name is $a."
     case _ => "Hi...?!"
   }
